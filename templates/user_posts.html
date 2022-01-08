@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <ul class="content">
+    {% for mesg in get_flashed_messages() %}
+    <h1>{{ mesg }}</h1>
+    {% endfor %}
+        {% for message in messages %}
+        <li>
+            <h2>{{message.title}}</h2>
+            <p class="subtext">{{message.date}}</p>
+            <p>{{message.content}}</p>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

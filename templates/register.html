@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block register %}{% endblock %}
+{% block content %}
+{% for mesg in get_flashed_messages() %}
+<h1>{{ mesg }}</h1>
+{% endfor %}
+    <h1>Create Account</h1>
+    <form method="POST" action="/register/">
+        <p><label for="name">Name:</label><input name="name" id="name" maxlength="32"/></p>
+        <p><label for="username">Username:</label><input name="username" id="username" maxlength="32"/></p><p>
+        <p><label for="password">Password:</label><input name="password" id="password" maxlength="32" type="password" <br><em> Password must contain at least 6 characters,  a capital letter, and 1 special character</em></p>
+        <p><label for="confirm">Confirm Password:</label><input name="confirm" id="confirm" maxlength="32" type="password"/></p>
+        <p><label for="email">Email:</label><input name="email" id="email" maxlength="32"> <br><em> Please use a valid email address "example@example.com"</em></p>
+        <p><input type="submit" name="register" value="Register" /></p>
+    </form>
+{% endblock %}

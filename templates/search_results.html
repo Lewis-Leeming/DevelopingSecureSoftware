@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Search results</h1>
+    <p>Results for: {{query|safe}}</p>
+
+    <ul>
+        {% for message in messages %}
+        <li>
+            <h1>{{ message.title}}</h1>
+            <p>By {{message.username}}</p>
+            <p>
+                {{message.content}}
+            </p>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

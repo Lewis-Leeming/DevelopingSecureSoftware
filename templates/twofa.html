@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block captcha %}{% endblock %}
+{% block login %}{% endblock %}
+{% block content %}
+
+
+    <h1>Login</h1>
+    <form method="POST" action="/twofa/">
+        <p><label for="twofa">Login Code:</label><input name="twofa" id="twofa" maxlength="32" type="password" /></p>
+		
+		<p><input type="submit" id = "twofa" name="twofa" value="Login" /></p>
+        
+    </form>
+
+{% endblock %}
+

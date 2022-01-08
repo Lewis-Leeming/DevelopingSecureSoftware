@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Login</h1>
+    <form method="POST" action="/login/">
+        {% for mesg in get_flashed_messages() %}
+        <h1>{{ mesg }}</h1>
+        {% endfor %}
+        <p><label for="username">Username:</label><input name="username" id="username" maxlength="32" /></p>
+        <p><label for="password">Password:</label><input name="password" id="password" maxlength="32" type="password" /></p>
+        <p><label for="pin">PIN:</label><input name="pin" id="pin" maxlength="4" type="password" /></p>
+        <p><input type="submit" name="login" value="Login" /></p>
+    </form>
+    <a href="/reset/">Forgotten Your Password?</a>
+{% endblock %}

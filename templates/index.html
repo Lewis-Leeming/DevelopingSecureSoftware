@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <ul class="content">
+        {% for message in messages %}
+        <li>
+            <h2>{{message.title}}</h2>
+            <p class="subtext">By <a href="/{{message.username}}/">{{message.username}}</a> - {{message.date}}</p>
+            <p>
+            {{message.content}}
+            </p>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
